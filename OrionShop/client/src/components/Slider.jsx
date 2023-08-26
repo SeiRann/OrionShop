@@ -1,4 +1,4 @@
-import DarkSliderStyle from "../styles/DarkSliderStyle.scss";
+import SliderStyle from "../styles/SliderStyle.scss";
 import axios from "axios"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -52,7 +52,7 @@ export default function Slider (){
 
 
     return(
-        <div id="Slider" style={DarkSliderStyle} key={fetchGames[counter]?._id}>
+        <div id="Slider" key={fetchGames[counter]?._id}>
             <header><h1>Featured</h1></header>
             <div id="Content" key={fetchGames[counter]?._id}>
                 <svg onClick={onClickLeft} id="left"xmlns="http://www.w3.org/2000/svg" width="26" height="52" viewBox="0 0 26 52" fill="none">

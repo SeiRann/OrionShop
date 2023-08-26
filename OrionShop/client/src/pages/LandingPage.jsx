@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar.jsx";
 import Slider from "../components/Slider"
 import GamesViewGrid from "../components/GamesViewGrid";
 

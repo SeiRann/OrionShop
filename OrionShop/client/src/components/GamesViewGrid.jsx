@@ -1,4 +1,4 @@
-import DarkGamesViewStyle from "../styles/DarkGamesViewStyle.scss";
+import GamesViewStyle from "../styles/GamesViewStyle.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -49,7 +49,7 @@ export default function GamesViewGrid() {
     };
 
     return (
-        <div id="GamesView" style={DarkGamesViewStyle}>
+        <div id="GamesView">
             <div id="GamesViewCategories">
                 {categories.map((category) => (
                     <button

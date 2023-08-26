@@ -1,17 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { LightModeContext } from "./LightModeContext";
+import { NavBarContext } from "./NavBarContext";
 import moon from "../assets/moon.png";
 import accountDark from "../assets/accountDark.png";
-import DarkNavBarStyle from "../styles/DarkNavBarStyle.scss"
+import NavBarStyle from "../styles/NavBarStyle.scss";
 
 const NavBar = () => {
-    const { lightMode, toggleLightMode } = useContext(LightModeContext);
-    
-    
-   
-
+    const { lightMode, toggleLightMode } = useContext(NavBarContext);
     const [filteredGames, setFilteredGames] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [visible, setVisible] = useState("none");
@@ -62,7 +58,7 @@ const NavBar = () => {
     };
 
     return (
-        <div id="Navbar">
+        <div id="NavBar">
             <h1>Orion</h1>
             <div>
                 <input type="text" placeholder="Search..." onChange={(e) => onChangeEvent(e)} />

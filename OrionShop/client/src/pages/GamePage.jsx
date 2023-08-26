@@ -1,13 +1,13 @@
-import DarkGamePageStyle from "../styles/DarkGamePageStyle.scss"
+import GamePageStyle from "../styles/GamePageStyle.scss"
 import NavBar from "../components/NavBar";
 import { useParams } from "react-router-dom";
 import { useState,useEffect, useContext } from "react";
 import axios from "axios";
-import { LightModeContext } from "../components/LightModeContext";
+import { NavBarContext } from "../components/NavBarContext";
 
 
 export default function GamePage(){
-    const { lightmode } = useContext(LightModeContext);
+    const { lightmode } = useContext(NavBarContext);
     const [game,setGame] = useState({});
     const [idd,setId] = useState();
     const { id } = useParams();
