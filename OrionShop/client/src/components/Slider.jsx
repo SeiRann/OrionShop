@@ -59,18 +59,18 @@ export default function Slider (){
                     <path d="M24 3.68893L2.10179 26L24 48.3111L24 3.68893Z" fill="#CBCDBC" stroke="#3F3A3E" strokeWidth="3"/>
                 </svg>
                 <div id="FeaturedContent" key={fetchGames[counter]?._id}>
-                    <Link to={"/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.thumbnail} alt="" /></Link>
+                    <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.thumbnail} alt="" /></Link>
                     <div id="SideContent">
                         {fetchedGames[counter]?.name.length > 20? 
-                        <Link to={"/" + fetchedGames[counter]?._id}><h1>{fetchedGames[counter]?.name.slice(0,20)}...</h1></Link>
+                        <Link to={"/game/" + fetchedGames[counter]?._id}><h1>{fetchedGames[counter]?.name.slice(0,20)}...</h1></Link>
                         : 
-                        <Link to={"/" + fetchedGames[counter]?._id}><h1>{fetchedGames[counter]?.name}</h1></Link>
+                        <Link to={"/game/" + fetchedGames[counter]?._id}><h1>{fetchedGames[counter]?.name}</h1></Link>
                         }
                         <div id="SideContentGrid" key={fetchGames[counter]?._id}>
-                            <Link to={"/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[0]} alt="" /></Link>
-                            <Link to={"/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[1]} alt="" /></Link>
-                            <Link to={"/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[2]} alt="" /></Link>
-                            <Link to={"/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[3]} alt="" /></Link>
+                            <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[0]} alt="" /></Link>
+                            <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[1]} alt="" /></Link>
+                            <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[2]} alt="" /></Link>
+                            <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[3]} alt="" /></Link>
                         </div>
                         <h2>Tags</h2>
                         <div id="SideContentTags" key={fetchGames[counter]?._id}>

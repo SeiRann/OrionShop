@@ -65,8 +65,8 @@ export default function GamesViewGrid() {
                 {
                     filteredGames?.map((game) => (
                         <div className="Game" key={game._id}>
-                            <Link to={"/" + game._id}><img src={game.thumbnail} alt="" /></Link>
-                            <Link to={"/" + game._id}><h3>{game.name}</h3></Link>
+                            <Link to={"/game/" + game._id}><img src={game.thumbnail} alt="" /></Link>
+                            <Link to={"/game/" + game._id}><h3>{game.name}</h3></Link>
                             {game.price !== "Free" ? <h4>${game.price}</h4> : <h4>{game.price}</h4>}
                         </div>
                     ))

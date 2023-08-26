@@ -11,6 +11,7 @@
 }
 
 
+
 $text-color: #E9E2E8;
 $background-color: #1A141A;
 $primary-color: #CBCDBC; 
@@ -31,9 +32,9 @@ $smalltextfont: Roboto Slab;
     justify-content: center;
 }
 
-#LoginPage{
+#SignupPage{
     width: 256px;
-    height: 256px;
+    height: 276px;
     background-color: $primary-color;
     border-radius: 2px;
     header{
@@ -113,7 +114,7 @@ $smalltextfont: Roboto Slab;
             background-color: $primary-color;
         }
 
-        #login{
+        #signup{
             background-color: $accent-color;
             color: $primary-color;
         }
