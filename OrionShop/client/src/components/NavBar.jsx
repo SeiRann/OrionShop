@@ -62,7 +62,7 @@ const NavBar = () => {
     };
 
     return (
-        <div id={lightMode?"LightNavBar":"NavBar"}>
+        <div id="Navbar">
             <h1>Orion</h1>
             <div>
                 <input type="text" placeholder="Search..." onChange={(e) => onChangeEvent(e)} />
