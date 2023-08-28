@@ -31,6 +31,13 @@ const gameSchema = new mongoose.Schema({
     price: {type:String},
 })
 
+const accountSchema = new mongoose.Schema({
+    username: {type: String, required: true, unique:true},
+    email: {type: String, required:true, unique:true},
+    password: {type: String, required:true, unique:true}
+})
+
+const Account = mongoose.model("Account", accountSchema);
 const Game = mongoose.model("Game", gameSchema);
 
 app.use(express.json());
@@ -49,6 +56,27 @@ app.post("/create", (req,res) => {
             res.status(500).json({ msg: err })
         })
 });
+
+app.post("/create/account", (req, res) => {
+    const { username, email, password } = req.body;
+
+    const newAccount = new Account({username, email, password})
+
+    newAccount
+        .save()
+        .then(() => {
+            res.json({ msg: "Account added" });
+        })
+        .catch((err) => {
+            res.status(500).json({ mag: err });
+        })
+})
+
+app.post("/account/login", (req, res) => {
+    const { username, email, password } = req.body;
+})
+
+
 
 app.get("/games", (req,res) => {
     Game.find()
