@@ -35,7 +35,7 @@ const gameSchema = new mongoose.Schema({
 const accountSchema = new mongoose.Schema({
     username: {type: String, required: true, unique:true},
     email: {type: String, required:true, unique:true},
-    password: {type: String, required:true, unique:true}
+    password: {type: String, required:true, unique:false}
 })
 
 const Account = mongoose.model("Account", accountSchema);
@@ -58,32 +58,54 @@ app.post("/create", (req,res) => { // POST request for a GAME
         })
 });
 
-app.post("/create/account", (req, res) => { // POST request for an ACCOUNT
+app.post("/create/account", async (req, res) => { // POST request for an ACCOUNT
     const { username, email, password } = req.body;
 
-    const newAccount = new Account({username, email, password})
+    try{
+        const existingAccount = await Account.findOne({ $or: [{username}, {email}]});
 
-    newAccount
-        .save()
-        .then(() => {
-            res.json({ msg: "Account added" });
-        })
-        .catch((err) => {
-            res.status(500).json({ mag: err });
-        })
+        if(existingAccount ) {
+            res.json({unique:false});
+        } else {
+
+            const hashedPassword = await bcrypt.hash(password, 10);
+
+            const newAccount = new Account({
+                username:username,
+                email:email,
+                password:hashedPassword
+            });
+            await newAccount.save();
+            res.json({ unique: true});
+        }
+    } catch(error){
+        console.error("Error during signup: ", error);
+        res.status(500).json({message: "Internal server error"})
+    }
 })
 
-app.get("/accounts/:username", (req,res) => { //GET request for an ACCOUNT by ID
-    const { username } = req.params;
+app.post("/login", async (req,res) => { //POST request for an ACCOUNT by USERNAME
+    const { username, password } = req.body;
     
-    Account.findById(username)
-        .then((account) => {
-            res.json(account);
-        })
-        .catch((err) => {
-            res.status(500).json({ msg: err});
-        })
+    try{
+        const account = await Account.findOne({ username });
 
+        if(!account){
+            res.status(404).json({ msg: "User not found" });
+        }
+
+        const passwordMatch = await bcrypt.compare(password, account.password);
+
+        if(passwordMatch){
+            res.json({ success: true, account});
+        } else {
+            res.json({ success: false });
+        }
+
+    } catch(err){
+        console.error("Error: ", err);
+        res.status(500).json({ message: err});
+    }
 })
 
 
