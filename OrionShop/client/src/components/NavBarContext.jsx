@@ -5,6 +5,7 @@ export const NavBarContext = createContext();
 
 export const NavBarProvider = ({ children }) => {
     const [lightMode, setLightMode] = useState(false);
+    const [loggedAccount, setLoggedAccount] = useState();
 
     const toggleLightMode = () => {
         if(lightMode == false){
@@ -15,7 +16,7 @@ export const NavBarProvider = ({ children }) => {
     };
 
     return (
-        <NavBarContext.Provider value={{ lightMode, toggleLightMode }}>
+        <NavBarContext.Provider value={{ lightMode, toggleLightMode, loggedAccount, setLoggedAccount}}>
             {children}
         </NavBarContext.Provider>
     );

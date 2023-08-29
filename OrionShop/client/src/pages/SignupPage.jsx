@@ -1,9 +1,11 @@
 import { useState } from "react";
 import SignupPageStyle from "../styles/SignupPageStyle.scss"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignupPage = () => {
+    const navigate = useNavigate();
+   
     const [showPassword, setShowPassword] = useState(false);
 
     const [username,setUsername] = useState();
@@ -38,6 +40,7 @@ const SignupPage = () => {
                 alert("Username or email is already taken.");
             } else {
                 alert("Account created successfully!");
+                navigate("/login")
             }
         } catch(err){
             console.error(err);

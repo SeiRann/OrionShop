@@ -84,7 +84,14 @@ $accent-color: #729397;
     }
     #NavBarButtons{
         display: flex;
+        flex-direction: row;
         gap: 30px;
+        align-items: center;
+        justify-content: center;
+        #loggedAccount{
+            font-size: 36px;
+            font-weight: 500;
+        }
     }
 }
 

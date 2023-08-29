@@ -6,8 +6,9 @@ import moon from "../assets/moon.png";
 import accountDark from "../assets/accountDark.png";
 import NavBarStyle from "../styles/NavBarStyle.scss";
 
+
 const NavBar = () => {
-    const { lightMode, toggleLightMode } = useContext(NavBarContext);
+    const { loggedAccount } = useContext(NavBarContext);
     const [filteredGames, setFilteredGames] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [visible, setVisible] = useState("none");
@@ -25,12 +26,8 @@ const NavBar = () => {
 
     useEffect(() => {
         fetchGames();
+        console.log(loggedAccount)
     }, []);
-
-    const changeLightMode = () => {
-        toggleLightMode();
-        
-    };
 
     useEffect(() => {
         setFilteredGames(
@@ -59,7 +56,11 @@ const NavBar = () => {
     };
 
     const handleAccount = () =>{
-        navigate("/login");
+        if(loggedAccount){
+            navigate("/account")
+        } else{
+            navigate("/login")
+        }
     }
 
     return (
@@ -98,10 +99,10 @@ const NavBar = () => {
                     src={moon}
                     alt="MoonIcon"
                     onClick={() => {
-                        toggleLightMode();
+                        // toggleLightMode();
                     }}
                 />
-                <img src={accountDark} alt="AccountDarkIcon" onClick={() => handleAccount()}/>
+                {loggedAccount ? <h1 id="loggedAccount" onClick={()=>handleAccount()}>{loggedAccount?.username}</h1>:<img src={accountDark} alt="AccountDarkIcon" onClick={() => handleAccount()}/>}
             </div>
         </div>
     );

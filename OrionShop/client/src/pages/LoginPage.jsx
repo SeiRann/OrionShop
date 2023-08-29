@@ -1,11 +1,13 @@
 import LoginPageStyle from "../styles/LoginPageStyle.scss"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { NavBarContext } from "../components/NavBarContext";
 
 const LoginPage = () => {
-
+    const navigate = useNavigate();
+    const { setLoggedAccount } = useContext(NavBarContext);
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
     const [showPassword,setShowPassword] = useState(false);
@@ -38,7 +40,8 @@ const LoginPage = () => {
                 password: password
             });
             if(fetchedAccount.data.success) {
-                alert("success")
+                navigate("/");
+                setLoggedAccount(fetchedAccount.data.account);
             } else {
                 alert("not success")
             }
