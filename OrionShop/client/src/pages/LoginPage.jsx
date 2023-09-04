@@ -11,6 +11,7 @@ const LoginPage = () => {
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
     const [showPassword,setShowPassword] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
 
     // const [text,setText] = useState("dsjhafjklsdjflk"); //the text
     // const encrypted = CryptoJS.MD5(text); // Encrypt the text (text -> hash)
@@ -31,6 +32,10 @@ const LoginPage = () => {
         setShowPassword(!showPassword);
     }
 
+    const toggleRememberMe = () => {
+        setRememberMe(!rememberMe);
+    }
+
     //login: seiran //email: bo646ru@gmail.com //password: klfb1234
 
     const onLogin = async () => {
@@ -42,6 +47,10 @@ const LoginPage = () => {
             if(fetchedAccount.data.success) {
                 navigate("/");
                 setLoggedAccount(fetchedAccount.data.account);
+                if(rememberMe){
+                    const accountData = JSON.stringify(fetchedAccount.data.account);
+                    localStorage.setItem("account", accountData);
+                }
             } else {
                 alert("not success")
             }
@@ -66,7 +75,7 @@ const LoginPage = () => {
                         <span className="checkmark" />Show password
                     </label>
                     <label className="container">
-                        <input type="checkbox"/>
+                        <input type="checkbox" onChange={() => toggleRememberMe()}/>
                         <span className="checkmark" />Remember me
                     </label>
                 </div>

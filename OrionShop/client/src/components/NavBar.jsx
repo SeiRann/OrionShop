@@ -63,6 +63,10 @@ const NavBar = () => {
         }
     }
 
+    useEffect(() => {
+        console.log(loggedAccount?.username);
+    })
+
     return (
         <div id="NavBar">
             <h1>Orion</h1>

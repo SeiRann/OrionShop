@@ -5,7 +5,7 @@ export const NavBarContext = createContext();
 
 export const NavBarProvider = ({ children }) => {
     const [lightMode, setLightMode] = useState(false);
-    const [loggedAccount, setLoggedAccount] = useState();
+    const [loggedAccount, setLoggedAccount] = useState(JSON.parse(localStorage.getItem("account")));
 
     const toggleLightMode = () => {
         if(lightMode == false){
