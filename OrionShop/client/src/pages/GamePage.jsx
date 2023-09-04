@@ -7,7 +7,7 @@ import { NavBarContext } from "../components/NavBarContext";
 
 
 export default function GamePage(){
-    const { lightmode } = useContext(NavBarContext);
+    const { lightmode, addToCart } = useContext(NavBarContext);
     const [game,setGame] = useState({});
     const [idd,setId] = useState();
     const { id } = useParams();
@@ -70,7 +70,7 @@ export default function GamePage(){
                             }
                         </div>
                         <div id="Purchase">
-                            <button>Add to cart</button>
+                            <button onClick={() => addToCart(game)}>Add to cart</button>
                             {game.price !== "Free" ? <h3>${game.price}</h3> : <h3>{game.price}</h3> }
                         </div>
                     </div>

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Handjet', cursive;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    cursor: default;
+}
+
+
+
+
+$text-color: #E9E2E8;
+$background-color: #1A141A;
+$primary-color: #CBCDBC; 
+$secondary-color: #231A22;
+$accent-color: #729397;
+
+
+$headingfont: Handjet;
+$textfont: Raleway;
+$smalltextfont: Roboto Slab;
+
+#AccountPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    header{
+        width: 1000px;
+        height: 50px;
+        color: $text-color;
+        h1{
+            font-family: $headingfont;
+            font-size: 40px;
+            font-weight: 500;
+        }
+    }
+
+    #Line{
+        width: 1200px;
+        height: 2px;
+        background-color: $primary-color;
+    }
+
+    #AccountContent{
+        width: 1200px;
+        display: flex;
+        flex-direction: row;
+        
+
+        #AccountOptions{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 500px;
+            border-right: solid 2px $primary-color;
+
+            button{
+                height: 50px;
+                border: none;
+                border-bottom: solid 2px $primary-color;
+                background-color: $secondary-color;
+                color: $text-color;
+                font-family: $headingfont;
+                font-size: 24px;
+                font-weight: 400;
+            }
+
+            .active{
+                height: 50px;
+                border: none;
+                border-bottom: solid 2px $primary-color;
+                background-color: $accent-color;
+                color: $secondary-color;
+                font-family: $headingfont;
+                font-size: 24px;
+                font-weight: 400;
+            }
+        }
+
+        #AccountInfo{
+            #Details{
+                margin: 10px;
+                color: $text-color;
+                h1{
+                    font-family: $textfont;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
