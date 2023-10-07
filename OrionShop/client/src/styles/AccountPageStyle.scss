@@ -18,6 +18,7 @@ $background-color: #1A141A;
 $primary-color: #CBCDBC; 
 $secondary-color: #231A22;
 $accent-color: #729397;
+$negative-button-color: #b1575a;
 
 
 $headingfont: Handjet;
@@ -85,11 +86,41 @@ $smalltextfont: Roboto Slab;
 
         #AccountInfo{
             #Details{
-                margin: 10px;
+                padding: 20px;
                 color: $text-color;
                 h1{
                     font-family: $textfont;
                     font-weight: 400;
+                }
+
+                #SignOutButton{
+                    margin-top:10px;
+                    border: none;
+                    width: 150px;
+                    height: 30px;
+                    border-radius: 2px;
+                    background-color: $negative-button-color;
+                    color: $text-color;
+                }
+            }
+
+            #Deletion{
+                width: 900px;
+                padding: 20px;
+                color: $text-color;
+                h1{
+                    font-family: $textfont;
+                    font-weight: 400;
+                    
+                }
+                #DeleteButton{
+                    margin-top:10px;
+                    border: none;
+                    width: 150px;
+                    height: 30px;
+                    border-radius: 2px;
+                    background-color: $negative-button-color;
+                    color: $text-color;
                 }
             }
         }

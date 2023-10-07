@@ -109,6 +109,22 @@ app.post("/login", async (req,res) => { //POST request for an ACCOUNT by USERNAM
     }
 })
 
+app.delete("/account/:id", (req,res) => {
+    const { id } = req.params;
+
+    Account.findByIdAndDelete(id)
+        .then((account) => {
+            if(account){
+                res.json({ msg: "account deleted"})
+            } else {
+                res.json({ msg: "account not found"})
+            }
+        })
+        .catch((err) => {
+            res.status(500).json({msg: " err deleting account"});
+        })
+})
+
 
 
 app.get("/games", (req,res) => {

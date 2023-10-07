@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar"
 import { useState,useContext, useEffect } from "react";
 import { NavBarContext } from "../components/NavBarContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function AccountPage(){
     const navigate = useNavigate();
@@ -31,12 +32,20 @@ export default function AccountPage(){
         navigate("/")
     }
 
+    const handleDeletion = (id) => {
+        localStorage.removeItem("account")
+        setLoggedAccount(null)
+        axios.delete(`http://localhost:3001/account/${id}`)
+        alert("Account Deleted!")
+        navigate("/")
+    }
+
     const Details = () => {
         return(
             <div id="Details">
                 <h1>Username: {loggedAccount.username}</h1>
                 <h1>E-mail: {loggedAccount.email}</h1>
-                <button onClick={handleSignOut}>Sign out</button>
+                <button id="SignOutButton"onClick={handleSignOut}>Sign out</button>
             </div>
         )
     }  
@@ -59,7 +68,8 @@ export default function AccountPage(){
     const Deletion = () => {
         return(
             <div id="Deletion">
-                
+                <h1>In this section you are able to permanently delete your account and never have access to this account ever again!!!</h1>
+                <button onClick={() => handleDeletion(loggedAccount._id)}id="DeleteButton">Delete Account</button>
             </div>
         )
     }
