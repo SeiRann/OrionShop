@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import SignupPageStyle from "../styles/SignupPageStyle.scss"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { NavBarContext } from "../components/NavBarContext";
+
 
 const SignupPage = () => {
     const navigate = useNavigate();
    
-    const [showPassword, setShowPassword] = useState(false);
+    const {loggedAccount} = useContext(NavBarContext);
 
+    const [showPassword, setShowPassword] = useState(false);
     const [username,setUsername] = useState();
     const [email,setEmail] = useState();
     const [password,setPassword] = useState();
+
+    useEffect(() => {
+        if(loggedAccount){
+            navigate("/")
+        } else {
+            navigate("/signup")
+        }
+    },[])
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
