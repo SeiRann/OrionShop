@@ -7,7 +7,7 @@ import { NavBarContext } from "../components/NavBarContext";
 
 const LoginPage = () => {
     const navigate = useNavigate();
-    const { setLoggedAccount } = useContext(NavBarContext);
+    const { loggedAccount,setLoggedAccount } = useContext(NavBarContext);
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
     const [showPassword,setShowPassword] = useState(false);
@@ -23,6 +23,14 @@ const LoginPage = () => {
     const handleUsername = (e) => {
         setUsername(e.target.value);
     }
+
+    useEffect(() => {
+        if(loggedAccount){
+            navigate("/")
+        } else {
+            navigate("/login")
+        }
+    },[])
 
     const handlePassword = (e) => {
         setPassword(e.target.value);

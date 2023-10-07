@@ -17,6 +17,7 @@ export default function AccountPage(){
             <div id="Details">
                 <h1>Username: {loggedAccount.username}</h1>
                 <h1>E-mail: {loggedAccount.email}</h1>
+                <button>Sign out</button>
             </div>
         )
     }  

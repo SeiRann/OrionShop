@@ -5,7 +5,7 @@ export const NavBarContext = createContext();
 
 export const NavBarProvider = ({ children }) => {
     const [lightMode, setLightMode] = useState(false);
-    const [loggedAccount, setLoggedAccount] = useState(JSON.parse(localStorage.getItem("account")));
+    const [loggedAccount, setLoggedAccount] = useState(JSON.parse(localStorage.getItem("account")),[]);
     const [cart, setCart] = useState([]);
 
     const addToCart = (addedGame) => {
