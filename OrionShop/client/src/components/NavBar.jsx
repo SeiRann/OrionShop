@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link,useNavigate } from "react-router-dom";
 import { NavBarContext } from "./NavBarContext";
-import moon from "../assets/moon.png";
+import cart from "../assets/shopping-cart.png";
 import accountDark from "../assets/accountDark.png";
 import NavBarStyle from "../styles/NavBarStyle.scss";
 
@@ -15,19 +15,7 @@ const NavBar = () => {
     const [fetchedGames, setFetchedGames] = useState([]);
     const navigate = useNavigate();
 
-    const fetchGames = async () => {
-        try {
-            const response = await axios.get("http://localhost:3001/games");
-            setFetchedGames(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    useEffect(() => {
-        fetchGames();
-        
-    }, []);
+    
 
     useEffect(() => {
         setFilteredGames(
@@ -60,11 +48,12 @@ const NavBar = () => {
         }
     }
 
+
    
 
     return (
         <div id="NavBar">
-            <h1>Orion</h1>
+            <h1 onClick={() => navigate("/")}>Orion</h1>
             <div>
                 <input type="text" placeholder="Search..." onChange={(e) => onChangeEvent(e)} />
                 <div id="SearchMenu" style={{ display: visible }}>
@@ -95,10 +84,10 @@ const NavBar = () => {
             </div>
             <div id="NavBarButtons">
                 <img
-                    src={moon}
+                    src={cart}
                     alt="MoonIcon"
                     onClick={() => {
-                        // toggleLightMode();
+                        navigate("/cart")
                     }}
                 />
                 {loggedAccount ? <h1 id="loggedAccount" onClick={()=>handleAccount()}>{loggedAccount?.username}</h1>:<img src={accountDark} alt="AccountDarkIcon" onClick={() => handleAccount()}/>}
