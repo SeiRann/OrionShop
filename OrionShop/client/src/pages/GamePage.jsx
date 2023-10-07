@@ -22,10 +22,6 @@ export default function GamePage(){
         }
     } 
 
-    useEffect(()=>{
-        lightmode ? setId("LightGamePage") : setId("GamePage");
-        console.log(lightmode)
-    },[lightmode])
     
 
     useEffect(() => {
@@ -39,7 +35,7 @@ export default function GamePage(){
     return(
         <div>
             <NavBar />
-            <div id={idd}>
+            <div id="GamePage">
                 <header>
                     <h1>{game.name}</h1>
                 </header>

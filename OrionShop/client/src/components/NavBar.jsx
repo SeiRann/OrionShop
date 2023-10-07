@@ -26,7 +26,7 @@ const NavBar = () => {
 
     useEffect(() => {
         fetchGames();
-        console.log(loggedAccount)
+        
     }, []);
 
     useEffect(() => {
@@ -51,10 +51,7 @@ const NavBar = () => {
         }
     };
 
-    const handleClick = (id) => {
-        console.log(id);
-    };
-
+    
     const handleAccount = () =>{
         if(loggedAccount){
             navigate("/account")
@@ -63,9 +60,7 @@ const NavBar = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(loggedAccount?.username);
-    })
+   
 
     return (
         <div id="NavBar">

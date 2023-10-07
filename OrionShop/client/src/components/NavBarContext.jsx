@@ -1,5 +1,5 @@
 // LightModeContext.js
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export const NavBarContext = createContext();
 
@@ -7,6 +7,11 @@ export const NavBarProvider = ({ children }) => {
     const [lightMode, setLightMode] = useState(false);
     const [loggedAccount, setLoggedAccount] = useState(JSON.parse(localStorage.getItem("account")),[]);
     const [cart, setCart] = useState([]);
+
+
+    useEffect(() => {
+        console.log(loggedAccount)
+    },[])
 
     const addToCart = (addedGame) => {
         if(!(cart.some((game) => game.id === addedGame.id))){
