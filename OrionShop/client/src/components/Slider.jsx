@@ -1,27 +1,21 @@
 import SliderStyle from "../styles/SliderStyle.scss";
 import axios from "axios"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { NavBarContext } from "./NavBarContext";
 
 export default function Slider (){
+    const {fetchAllGames} = useContext(NavBarContext)
     const [fetchedGames, setFetchedGames] = useState([]);
     const [counter, setCounter] = useState(0);
     const [activeOptionIndex, setActiveOptionIndex] = useState(counter);
-    
-
-    const fetchGames = async () => {
-        try {
-            const results = await axios.get("http://localhost:3001/games")
-            setFetchedGames(results.data);
-            
-        } catch (error){
-            console.log(error)
-        }
-    }
-    
 
     useEffect(()=>{
-        fetchGames()
+        fetchAllGames()
+            .then(data => {
+                setFetchedGames(data)
+            })
+            .catch(error => console.log(error))
     },[])
 
     const onClickLeft = () => {
@@ -52,13 +46,13 @@ export default function Slider (){
 
 
     return(
-        <div id="Slider" key={fetchGames[counter]?._id}>
+        <div id="Slider" key={fetchedGames[counter]?._id}>
             <header><h1>Featured</h1></header>
-            <div id="Content" key={fetchGames[counter]?._id}>
+            <div id="Content" >
                 <svg onClick={onClickLeft} id="left"xmlns="http://www.w3.org/2000/svg" width="26" height="52" viewBox="0 0 26 52" fill="none">
                     <path d="M24 3.68893L2.10179 26L24 48.3111L24 3.68893Z" fill="#CBCDBC" stroke="#3F3A3E" strokeWidth="3"/>
                 </svg>
-                <div id="FeaturedContent" key={fetchGames[counter]?._id}>
+                <div id="FeaturedContent" >
                     <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.thumbnail} alt="" /></Link>
                     <div id="SideContent">
                         {fetchedGames[counter]?.name.length > 20? 
@@ -66,14 +60,14 @@ export default function Slider (){
                         : 
                         <Link to={"/game/" + fetchedGames[counter]?._id}><h1>{fetchedGames[counter]?.name}</h1></Link>
                         }
-                        <div id="SideContentGrid" key={fetchGames[counter]?._id}>
+                        <div id="SideContentGrid">
                             <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[0]} alt="" /></Link>
                             <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[1]} alt="" /></Link>
                             <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[2]} alt="" /></Link>
                             <Link to={"/game/" + fetchedGames[counter]?._id}><img src={fetchedGames[counter]?.gallery[3]} alt="" /></Link>
                         </div>
                         <h2>Tags</h2>
-                        <div id="SideContentTags" key={fetchGames[counter]?._id}>
+                        <div id="SideContentTags" >
                             {
                                 fetchedGames[counter]?.tags.map((tag)=> (
                                     <span className="Tag" key={tag}>{tag}</span>
@@ -87,7 +81,7 @@ export default function Slider (){
                     <path d="M2 3.68893L23.8982 26L2 48.3111L2 3.68893Z" fill="#CBCDBC" stroke="#3F3A3E" strokeWidth="3"/>
                 </svg>
             </div>
-            <div id="SliderOptions" key={fetchGames[counter]?._id}>
+            <div id="SliderOptions" >
                 {
                    fetchedGames.map((game,index) => (
                         <div key={index}

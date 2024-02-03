@@ -8,41 +8,23 @@ import NavBarStyle from "../styles/NavBarStyle.scss";
 
 
 const NavBar = () => {
-    const { loggedAccount } = useContext(NavBarContext);
-    const [filteredGames, setFilteredGames] = useState([]);
+    const { loggedAccount, fetchGameByName } = useContext(NavBarContext);
     const [searchTerm, setSearchTerm] = useState("");
     const [visible, setVisible] = useState("none");
     const [fetchedGames, setFetchedGames] = useState([]);
     const navigate = useNavigate();
 
-    
-    const fetchGames = async () => {
-        try{
-            const response = await axios.get("http://localhost:3001/games/")
-            let result = response.data
-            setFetchedGames(result)
-        } catch(err){
-            console.log(err)
-        }
-    }
-
-    useEffect(() => {fetchGames()},[])
-    
-
-
     useEffect(() => {
+       fetchGameByName(searchTerm)
+            .then(data => {
+                setFetchedGames(data)
+            })
+            .catch(err=> console.log(err))
         
-        console.log(fetchedGames)
-        setFilteredGames(
-            fetchedGames.filter(
-                (game) =>
-                    game.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    game.tags.includes(searchTerm) ||
-                    game.developer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    game.publisher.toLowerCase().includes(searchTerm.toLowerCase())
-            )
-        );
-    }, [searchTerm]);
+        
+    }, [searchTerm])
+    
+
 
     const onChangeEvent = (e) => {
         if (e.target.value === "") {
@@ -72,7 +54,7 @@ const NavBar = () => {
             <div>
                 <input type="text" placeholder="Search..." onChange={(e) => onChangeEvent(e)} />
                 <div id="SearchMenu" style={{ display: visible }}>
-                    {filteredGames?.map((game) => (
+                    {fetchedGames?.map((game) => (
                         <div className="SearchMenuItem" key={game._id}>
                             <div className="SuggestionIcon">
                                 <img src={game.thumbnail} alt="" />

@@ -19,7 +19,7 @@ export default function AccountPage(){
         } else {
             navigate("/")
         }
-    },{})
+    },[])
     
 
     const handleClick = (option) => {

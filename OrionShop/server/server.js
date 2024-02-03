@@ -138,18 +138,20 @@ app.get("/games", (req,res) => {
 })
 
 app.get("/games/name/:name", (req, res) => {
-    const {name} = req.params;
+    const { name } = req.params;
 
-    Game.find({name:name})
-        .then((game) => {
-            res.status(201).json(game);
-        })
-        .catch((err) =>{
-            res.status(500).json({msg: "couldn't find "+game})
-        })
     
+    const regex = new RegExp(name, "i");
 
-})
+    Game.find({ name: regex })
+        .then((games) => {
+            res.status(200).json(games);
+        })
+        .catch((err) => {
+            res.status(500).json({ msg: "Error: " + err.message });
+        });
+});
+
 
 
 app.get("/games/:id", (req, res) => {

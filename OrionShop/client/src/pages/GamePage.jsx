@@ -4,32 +4,34 @@ import { useParams } from "react-router-dom";
 import { useState,useEffect, useContext } from "react";
 import axios from "axios";
 import { NavBarContext } from "../components/NavBarContext";
-
+import { useNavigate } from "react-router-dom";
 
 export default function GamePage(){
-    const { lightmode, addToCart } = useContext(NavBarContext);
+    const { fetchGameById, addToCart, loggedAccount } = useContext(NavBarContext);
     const [game,setGame] = useState({});
-    const [idd,setId] = useState();
     const { id } = useParams();
     const [galleryIndex, setGalleryIndex] = useState(0);
-
-    const fetchGame = async (id) => {
-        try{
-            const result = await axios.get(`http://localhost:3001/games/${id}`)
-            setGame(result.data)
-        } catch(error) {
-            console.log(error)
-        }
-    } 
-
+    const navigate = useNavigate();
     
 
     useEffect(() => {
-        fetchGame(id)
+        fetchGameById(id)
+            .then(data=>{
+                setGame(data)
+            })
+            .catch(err=>console.log(err))
     },[id])
 
     const handleClick = (index) => {
         setGalleryIndex(index)
+    }
+
+    const onAdd = () => {
+        if(loggedAccount){
+            addToCart(id)
+        } else {
+            navigate("/login")
+        }
     }
 
     return(
@@ -66,7 +68,7 @@ export default function GamePage(){
                             }
                         </div>
                         <div id="Purchase">
-                            <button onClick={() => addToCart(game)}>Add to cart</button>
+                            <button onClick={() => onAdd()}>Add to cart</button>
                             {game.price !== "Free" ? <h3>${game.price}</h3> : <h3>{game.price}</h3> }
                         </div>
                     </div>
