@@ -8,6 +8,8 @@
     font-family: 'Raleway', sans-serif;
     font-family: 'Roboto Slab', serif;
     cursor: default;
+    scroll-behavior: auto;
+    
 }
 
 
@@ -25,11 +27,25 @@ $smalltextfont: Roboto Slab;
 
 #Center{
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    #Error{
+        color: rgb(255, 67, 67);
+        font: $smalltextfont;
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    #Success{
+        color: lime;
+        font: $smalltextfont;
+        font-size:20px;
+        margin:10px;
+    }
 }
 
 #SignupPage{

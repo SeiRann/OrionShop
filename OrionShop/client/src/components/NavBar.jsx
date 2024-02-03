@@ -16,8 +16,23 @@ const NavBar = () => {
     const navigate = useNavigate();
 
     
+    const fetchGames = async () => {
+        try{
+            const response = await axios.get("http://localhost:3001/games/")
+            let result = response.data
+            setFetchedGames(result)
+        } catch(err){
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {fetchGames()},[])
+    
+
 
     useEffect(() => {
+        
+        console.log(fetchedGames)
         setFilteredGames(
             fetchedGames.filter(
                 (game) =>
@@ -83,13 +98,14 @@ const NavBar = () => {
                 </div>
             </div>
             <div id="NavBarButtons">
-                <img
+                {loggedAccount? <img
                     src={cart}
                     alt="MoonIcon"
                     onClick={() => {
                         navigate("/cart")
                     }}
-                />
+                />:
+                null}
                 {loggedAccount ? <h1 id="loggedAccount" onClick={()=>handleAccount()}>{loggedAccount?.username}</h1>:<img src={accountDark} alt="AccountDarkIcon" onClick={() => handleAccount()}/>}
             </div>
         </div>

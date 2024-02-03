@@ -7,7 +7,7 @@ export const NavBarProvider = ({ children }) => {
     const [loggedAccount, setLoggedAccount] = useState(JSON.parse(localStorage.getItem("account")),[]);
     const [cart, setCart] = useState([]);
 
-
+    console.log(loggedAccount)
     const addToCart = (addedGame) => {
         if(!(cart.some((game) => game.id === addedGame.id))){
             setCart([...cart, addedGame]);

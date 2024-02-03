@@ -137,6 +137,20 @@ app.get("/games", (req,res) => {
         })
 })
 
+app.get("/games/name/:name", (req, res) => {
+    const {name} = req.params;
+
+    Game.find({name:name})
+        .then((game) => {
+            res.status(201).json(game);
+        })
+        .catch((err) =>{
+            res.status(500).json({msg: "couldn't find "+game})
+        })
+    
+
+})
+
 
 app.get("/games/:id", (req, res) => {
     const { id } = req.params

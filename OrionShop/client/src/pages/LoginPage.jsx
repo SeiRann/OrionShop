@@ -4,6 +4,7 @@ import CryptoJS from "crypto-js";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { NavBarContext } from "../components/NavBarContext";
+import NavBar  from "../components/NavBar";
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -12,6 +13,8 @@ const LoginPage = () => {
     const [password,setPassword] = useState("");
     const [showPassword,setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
+    const [error, setError] = useState();
+    const [success, setSuccess] = useState();
 
     // const [text,setText] = useState("dsjhafjklsdjflk"); //the text
     // const encrypted = CryptoJS.MD5(text); // Encrypt the text (text -> hash)
@@ -47,30 +50,50 @@ const LoginPage = () => {
     //login: seiran //email: bo646ru@gmail.com //password: klfb1234
 
     const onLogin = async () => {
-        try{
-            const fetchedAccount = await axios.post("http://localhost:3001/login", {
-                username: username,
-                password: password
-            });
-            if(fetchedAccount.data.success) {
-                navigate("/");
-                setLoggedAccount(fetchedAccount.data.account);
-                if(rememberMe){
-                    const accountData = JSON.stringify(fetchedAccount.data.account);
-                    localStorage.setItem("account", accountData);
+        if(username !== "" && password !== ""){
+            try{
+                const fetchedAccount = await axios.post("http://localhost:3001/login", {
+                    username: username,
+                    password: password
+                });
+                if(fetchedAccount.data.success) {
+                    setSuccess("Logged in succesfully!")
+                    setLoggedAccount(fetchedAccount.data.account);
+                    if(rememberMe){
+                        const accountData = JSON.stringify(fetchedAccount.data.account);
+                        localStorage.setItem("account", accountData);
+                    }
+                } else {
+                    setError("Wrong login credentials!")
                 }
-            } else {
-                alert("not success")
+            } catch(err){
+                console.log(err);
             }
-        } catch(err){
-            console.log(err);
+        } else {
+            setError("Login incomplete!")
         }
     }
 
+    useEffect(() => {
+        if (success) {
+            const timer = setTimeout(() => {
+                setSuccess("");
+                navigate("/");
+            }, 1500);
+
+            return () => clearTimeout(timer);
+        }
+    }, [success, navigate]);
+
 
     return(
-        <div id="Center">
+        <div>
+            <NavBar />
+            <div id="Center">
+            <h1 id="Error">{error}</h1>
+            <h1 id="Success">{success}</h1>
             <div id="LoginPage">
+                
                 <header><h1>Login</h1></header>
                 <div className="Line" />
                 <div id="Inputs">
@@ -92,6 +115,7 @@ const LoginPage = () => {
                     <button id="login" onClick={() => onLogin()}>Login</button>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
