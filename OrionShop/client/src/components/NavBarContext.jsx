@@ -1,5 +1,5 @@
 // LightModeContext.js
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,15 +10,25 @@ export const NavBarProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     
 
+    
     console.log(cart)
     const addToCart = (addedGame) => {
-        if(!(cart.some((game) => game.id === addedGame.id))){
-            setCart([...cart, addedGame]);
+        
+        const isIdInCart = cart.includes(addedGame);
+    
+        
+        if (!isIdInCart) {
+            setCart(prevCart => [...prevCart, addedGame]); 
         }
     }
+    
 
     const deleteFromCart = (id) => {
         setCart(cart.filter((item) => item.id !== id));
+    }
+
+    const clearCart = () =>{
+        setCart([])
     }
 
     const fetchGameByName = async (name) => {
@@ -61,7 +71,7 @@ export const NavBarProvider = ({ children }) => {
 
 
     return (
-        <NavBarContext.Provider value={{loggedAccount, setLoggedAccount, addToCart,deleteFromCart, fetchGameByName, fetchGameById, fetchAllGames}}>
+        <NavBarContext.Provider value={{cart,loggedAccount, setLoggedAccount, addToCart,deleteFromCart, clearCart, fetchGameByName, fetchGameById, fetchAllGames}}>
             {children}
         </NavBarContext.Provider>
     );

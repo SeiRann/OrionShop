@@ -7,7 +7,7 @@ import { NavBarContext } from "../components/NavBarContext";
 import { useNavigate } from "react-router-dom";
 
 export default function GamePage(){
-    const { fetchGameById, addToCart, loggedAccount } = useContext(NavBarContext);
+    const { fetchGameById, addToCart, loggedAccount,cart } = useContext(NavBarContext);
     const [game,setGame] = useState({});
     const { id } = useParams();
     const [galleryIndex, setGalleryIndex] = useState(0);
@@ -32,6 +32,7 @@ export default function GamePage(){
         } else {
             navigate("/login")
         }
+        console.log(cart)
     }
 
     return(

@@ -7,14 +7,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { NavBarProvider } from './components/NavBarContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+reportWebVitals(console.log)
+
 root.render(
-  <React.StrictMode>
     <NavBarProvider>
     <BrowserRouter>
         <App />
+        
     </BrowserRouter>
     </NavBarProvider>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

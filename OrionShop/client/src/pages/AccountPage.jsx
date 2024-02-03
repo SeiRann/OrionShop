@@ -8,7 +8,7 @@ import axios from "axios";
 export default function AccountPage(){
     const navigate = useNavigate();
 
-    const { loggedAccount, setLoggedAccount } = useContext(NavBarContext);
+    const { loggedAccount, setLoggedAccount, clearCart} = useContext(NavBarContext);
     const categories = ["Details", "Owned Games", "Deletion"];
     const [active,setActive] = useState(categories[0]);
 
@@ -29,6 +29,7 @@ export default function AccountPage(){
     const handleSignOut = () => {
         localStorage.removeItem("account")
         setLoggedAccount(null)
+        clearCart()
         navigate("/")
     }
 

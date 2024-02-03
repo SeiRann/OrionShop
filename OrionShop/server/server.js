@@ -125,6 +125,29 @@ app.delete("/account/:id", (req,res) => {
         })
 })
 
+app.put("/account/buyGame/:id", (req, res) => {
+    const { id } = req.params;
+    const { games } = req.body;
+
+    // Update the Account document by pushing new games to the ownedGame array
+    Account.findByIdAndUpdate(
+        id,
+        { $push: { ownedGame: { $each: games } } }, // Use $push to append games
+        { new: true } // Return the updated document
+    )
+    .then((account) => {
+        if (!account) {
+            return res.status(404).json({ error: "Account not found" });
+        }
+        res.json(account); // Respond with the updated account
+    })
+    .catch((error) => {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    });
+});
+
+
 
 
 app.get("/games", (req,res) => {
@@ -139,7 +162,7 @@ app.get("/games", (req,res) => {
 
 app.get("/games/name/:name", (req, res) => {
     const { name } = req.params;
-
+    
     
     const regex = new RegExp(name, "i");
 
@@ -194,6 +217,8 @@ app.delete("/games/:id", (req,res) => {
             res.status(500).json({msg: " err deleting game"});
         })
 })
+
+
 
 
 app.listen(3001, () => {
