@@ -8,19 +8,7 @@ export default function CartPage(){
 
     const {cart, deleteFromCart, clearCart, fetchGameById} = useContext(NavBarContext)
     const [fetchedGames, setFetchedGames] = useState([]);
-
-    // const fetchGame = async () => {
-    //     try {
-    //         const response = await axios.get("http://localhost:3001/games/64d236c0f179a0f313a2aa33");
-    //         setFetchedGames(response.data);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     fetchGame();
-    // }, []);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
         cart?.forEach((game) => {
@@ -31,9 +19,20 @@ export default function CartPage(){
                 .catch(err=>console.log(err))
         })
         
-        console.log(fetchedGames)
-        console.log(cart)
+        
     },[])
+
+    useEffect(() => {
+        let totalPrice = 0
+        fetchedGames.forEach((game) => {
+            console.log(game.price)
+            if(game.price !== "Free"){
+                totalPrice += parseFloat(game.price)
+            }
+        })
+
+        setTotal(parseFloat(totalPrice.toFixed(2)))
+    },[fetchedGames])
 
     return(
         <div>
@@ -46,13 +45,6 @@ export default function CartPage(){
                 </header>
                 <div id="CartContent">
                     <div id="CartItems">
-                        {/* <div className="CartItem">
-                            <img src={fetchedGames?.thumbnail} alt="" />
-                            <div className="CartItemDetails">
-                                <h2>{fetchedGames?.name}</h2>
-                                {fetchedGames?.price !== "Free" ? <span>${fetchedGames?.price}</span>: <span>{fetchedGames?.price}</span>}
-                            </div>
-                        </div> */}
                         {fetchedGames?.map((game) => (
                             <div className="CartItem">
                                 <img src={game.thumbnail} alt="" />
@@ -69,14 +61,16 @@ export default function CartPage(){
                             <div id="CheckLine" />
                         </header>
                         <div id="ProductsList">
-                            <div className="Product">
-                                <h3>{fetchedGames?.name}</h3>
-                                {fetchedGames?.price !== "Free" ? <span>${fetchedGames?.price}</span>: <span>{fetchedGames?.price}</span>}
-                            </div>
+                            {fetchedGames?.map((game) => (
+                                <div className="Product">
+                                    <h3>{game.name}</h3>
+                                    {game.price !== "Free" ? <span>${game.price}</span>: <span>{game.price}</span>}
+                                </div>  
+                            ))}
                         </div>
                         <div id="CheckLine" />
                         <div id="Total">
-                            <h2>Total: <span>$6.66</span></h2>
+                            <h2>Total: ${total}</h2>
                         </div>
                         <div id="Buy">
                             <button>Buy Now</button>
