@@ -129,23 +129,53 @@ app.put("/account/buyGame/:id", (req, res) => {
     const { id } = req.params;
     const { games } = req.body;
 
-    // Update the Account document by pushing new games to the ownedGame array
-    Account.findByIdAndUpdate(
-        id,
-        { $push: { ownedGame: { $each: games } } }, // Use $push to append games
-        { new: true } // Return the updated document
-    )
-    .then((account) => {
-        if (!account) {
-            return res.status(404).json({ error: "Account not found" });
-        }
-        res.json(account); // Respond with the updated account
-    })
-    .catch((error) => {
-        console.error(error);
-        res.status(500).json({ error: "Internal server error" });
-    });
+    // Find the Account document by ID
+    Account.findById(id)
+        .then((account) => {
+            if (!account) {
+                return res.status(404).json({ error: "Account not found" });
+            }
+
+            const ownedGames = account.ownedGame || [];
+
+            // Check if each game in the request is already owned
+            const alreadyOwned = games.filter(game => ownedGames.includes(game));
+
+            if (alreadyOwned.length > 0) {
+                return res.status(400).json({ error: "You already own the game(s)" });
+            }
+
+            // Update the Account document by pushing new games to the ownedGame array
+            return Account.findByIdAndUpdate(
+                id,
+                { $push: { ownedGame: { $each: games } } }, // Use $push to append games
+                { new: true } // Return the updated document
+            );
+        })
+        .then((updatedAccount) => {
+            if (!updatedAccount) {
+                return res.status(404).json({ error: "Account not found" });
+            }
+            res.json(updatedAccount); // Respond with the updated account
+        })
+        .catch((error) => {
+            console.error(error);
+            res.status(500).json({ error: "Internal server error" });
+        });
 });
+
+app.get("/account/ownedGames/:id", (req,res)=> {
+    const { id } = req.params;
+
+    Account.findById(id)
+        .then((account) => {
+            return res.status(200).json(account.ownedGame)
+        })
+        .catch((error) => {
+            console.error(error)
+            res.status(500).json({error: error})
+        })
+})
 
 
 

@@ -123,6 +123,35 @@ $smalltextfont: Roboto Slab;
                     color: $text-color;
                 }
             }
+
+            #OwnedGames{
+                display: flex;
+                
+                #Game{
+                    background-color: $primary-color;
+                    border-radius: 5px;
+                    margin-left:20px;
+                    margin-top:20px;
+                    display:flex;
+                    color:$text-color;
+                    flex-direction: column;
+                    align-items:left;
+                    width:380px;
+                    height:300px;
+                    img{
+                        border-radius: 5px;
+                        width: 380px;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+                    h1{
+                        padding: 5px;
+                        color:$secondary-color;
+                        font-size:28px;
+                        font-family:$textfont ;
+                    }
+                }
+            }
         }
     }
 }

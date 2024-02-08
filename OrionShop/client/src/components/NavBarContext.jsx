@@ -9,9 +9,10 @@ export const NavBarProvider = ({ children }) => {
     const [loggedAccount, setLoggedAccount] = useState(JSON.parse(localStorage.getItem("account")),[]);
     const [cart, setCart] = useState([]);
     
+    useEffect(() => {
+        console.log(cart)
+    },[cart])
 
-    
-    console.log(cart)
     const addToCart = (addedGame) => {
         
         const isIdInCart = cart.includes(addedGame);
@@ -69,9 +70,31 @@ export const NavBarProvider = ({ children }) => {
         }
     }
 
+    const fetchOwnedGames = async (id) => {
+        try{
+            const response = await axios.get("http://localhost:3001/account/ownedGames/"+id)
+            const result = response.data
+            return result
+        } catch(err){
+            console.log(err)
+        }
+    }
+
 
     return (
-        <NavBarContext.Provider value={{cart,loggedAccount, setLoggedAccount, addToCart,deleteFromCart, clearCart, fetchGameByName, fetchGameById, fetchAllGames}}>
+        <NavBarContext.Provider value={{
+            cart,
+            loggedAccount,
+            setLoggedAccount,
+            fetch, 
+            addToCart,
+            deleteFromCart, 
+            clearCart, 
+            fetchGameByName, 
+            fetchGameById, 
+            fetchAllGames,
+            fetchOwnedGames
+            }}>
             {children}
         </NavBarContext.Provider>
     );

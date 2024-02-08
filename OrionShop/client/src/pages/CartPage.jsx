@@ -1,14 +1,18 @@
 import NavBar from "../components/NavBar"
 import CartPageStyle from "../styles/CartPageStyle.scss"
+import close from "../assets/close.png"
 import { useContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { NavBarContext } from "../components/NavBarContext";
 
 export default function CartPage(){
 
-    const {cart, deleteFromCart, clearCart, fetchGameById} = useContext(NavBarContext)
+    const {cart, deleteFromCart, clearCart, fetchGameById, loggedAccount} = useContext(NavBarContext)
     const [fetchedGames, setFetchedGames] = useState([]);
     const [total, setTotal] = useState(0);
+    const [id, setId] = useState();
+    const navigate = useNavigate();
 
     useEffect(() => {
         cart?.forEach((game) => {
@@ -19,7 +23,7 @@ export default function CartPage(){
                 .catch(err=>console.log(err))
         })
         
-        
+        setId(loggedAccount._id)
     },[])
 
     useEffect(() => {
@@ -34,6 +38,38 @@ export default function CartPage(){
         setTotal(parseFloat(totalPrice.toFixed(2)))
     },[fetchedGames])
 
+    const onBuy = () => {
+        let gameIds = []
+        fetchedGames.forEach((game)=>gameIds.push(game._id))
+        try{
+            axios({
+                method:"put",
+                url:"http://localhost:3001/account/buyGame/"+id,
+                data:{
+                    games:gameIds
+                },
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response=>{
+                console.log(response.data);
+            })
+            .catch(err => {
+                console.error(err)
+            })
+        }catch(err){
+            console.log(err)
+        }
+        clearCart()
+        navigate("/")
+    }
+
+    const onClose = (e) =>{
+        deleteFromCart(e.target._id)
+        
+    }
+
     return(
         <div>
             <NavBar />
@@ -47,8 +83,10 @@ export default function CartPage(){
                     <div id="CartItems">
                         {fetchedGames?.map((game) => (
                             <div className="CartItem">
+                                <img id="Close" src={close} alt="" onClick={(e)=>onClose(e)}/>
                                 <img src={game.thumbnail} alt="" />
                                 <div className="CartItemDetails">
+                                    
                                     <h2>{game.name}</h2>
                                     {game.price !=="Free"? <span>${game.price}</span>:<span>{game.price}</span>}
                                 </div>
@@ -63,6 +101,7 @@ export default function CartPage(){
                         <div id="ProductsList">
                             {fetchedGames?.map((game) => (
                                 <div className="Product">
+                                    
                                     <h3>{game.name}</h3>
                                     {game.price !== "Free" ? <span>${game.price}</span>: <span>{game.price}</span>}
                                 </div>  
@@ -73,7 +112,7 @@ export default function CartPage(){
                             <h2>Total: ${total}</h2>
                         </div>
                         <div id="Buy">
-                            <button>Buy Now</button>
+                            <button onClick={()=>onBuy()}>Buy Now</button>
                         </div>
                     </div>
                 </div>

@@ -2,16 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link,useNavigate } from "react-router-dom";
 import { NavBarContext } from "./NavBarContext";
-import cart from "../assets/shopping-cart.png";
+import cartIcon from "../assets/shopping-cart.png";
 import accountDark from "../assets/accountDark.png";
 import NavBarStyle from "../styles/NavBarStyle.scss";
 
 
 const NavBar = () => {
-    const { loggedAccount, fetchGameByName } = useContext(NavBarContext);
+    const { loggedAccount, fetchGameByName,cart } = useContext(NavBarContext);
     const [searchTerm, setSearchTerm] = useState("");
     const [visible, setVisible] = useState("none");
     const [fetchedGames, setFetchedGames] = useState([]);
+    const [counter, setCounter] = useState(0);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,7 +25,9 @@ const NavBar = () => {
         
     }, [searchTerm])
     
-
+    useEffect(()=>{
+        setCounter(cart.length)
+    },[cart])
 
     const onChangeEvent = (e) => {
         if (e.target.value === "") {
@@ -80,8 +83,9 @@ const NavBar = () => {
                 </div>
             </div>
             <div id="NavBarButtons">
+                {counter>0?<div id="CartIndicator">{counter}</div>:<div id="CartIndicator" style={{display:"none"}}></div>}
                 {loggedAccount? <img
-                    src={cart}
+                    src={cartIcon}
                     alt="MoonIcon"
                     onClick={() => {
                         navigate("/cart")

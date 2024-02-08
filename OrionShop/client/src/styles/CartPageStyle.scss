@@ -62,11 +62,20 @@ $smalltextfont: Roboto Slab;
         #CartItems{
             
             width: 784px;
+            height: 300px; 
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
             .CartItem{
-                
+                #Close{
+                    position:relative ;
+                    background-color: transparent;
+                    top:50px;
+                    left: 200px;
+                    width: 32px;
+                    height: 32px;
+                }
+                margin-top: -50px;
                 .CartItemDetails{
                     width: 240px;
                     color: $text-color;
@@ -95,6 +104,8 @@ $smalltextfont: Roboto Slab;
                     object-fit: scale-down;
                 }
             }
+
+            
         }
 
         #Check{
@@ -157,6 +168,7 @@ $smalltextfont: Roboto Slab;
                 display: flex;
                 align-items: center;
                 justify-content: right;
+                margin-bottom: 10px;
                 button{
                     border: none;
                     width: 150px;
