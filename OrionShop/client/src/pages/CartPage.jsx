@@ -67,7 +67,6 @@ export default function CartPage(){
 
     const onClose = (e) =>{
         deleteFromCart(e.target._id)
-        
     }
 
     return(
