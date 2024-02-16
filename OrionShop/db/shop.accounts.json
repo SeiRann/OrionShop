@@ -1,0 +1,103 @@
+[{
+  "_id": {
+    "$oid": "652173f727d550c51cf5537a"
+  },
+  "username": "seiran",
+  "email": "bo646ru@gmail.com",
+  "password": "$2b$10$YTr/Ismn9IOU/ohmtOaj4ujWFObIFG0IZ52gehlS05hAL8czl1UZq",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652fff982decf286c0a0b621"
+  },
+  "username": "SeiiRann",
+  "email": "bo636ru@gmail.com",
+  "password": "$2b$10$rAnoLhwVukCGqPAhfTZSZ.q6yGSagfgt5MDWxql3AMW.vqNYR5yQG",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655a346cf3fcc2619b26ae6b"
+  },
+  "username": "dsjafkjsdl",
+  "email": "ksdjflksadjf",
+  "password": "$2b$10$t1br/mMwdPz27zaNUYElM.9oRN1wAWWSuTZO0UEKX35LVGv.gFjQK",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b54a9550e2e93cdf5af538"
+  },
+  "username": "dsfa",
+  "email": "sdaf",
+  "password": "$2b$10$Pr3AVZvnVIR2BC9Ryqs3recLUwaCmuxQye.PZXGmXFC3yOVWQKByG",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b666b33a73cbedc54fd678"
+  },
+  "username": "Leah_ff07",
+  "email": "sdafsd@dsffsaafsd.cdsah",
+  "password": "$2b$10$U6IwBdfENf856T2qdHAg3ujUEK3XD9g68lCoPj49husVob5.dhd4m",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b667693a73cbedc54fd67e"
+  },
+  "username": "Leah_ff07323",
+  "email": "sdafsdfsdjkhfsadhjkasfd@sdajfds.fsdjh",
+  "password": "$2b$10$.iNtJOlU7kGjtKqS22bdZ.takax452sUXLLlYX/YngHir5lMEigxq",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b6677f3a73cbedc54fd681"
+  },
+  "username": "sdaafsdfads",
+  "email": "bo646343ru@gmail.com",
+  "password": "$2b$10$weuPmiZAna9wBn0frf1ejO.AnYVo4ORiaF/kfKA.1Piik8b31LppO",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b667c03a73cbedc54fd684"
+  },
+  "username": "sffsadafsdfsd",
+  "email": "bo62146ru@gmail.com",
+  "password": "$2b$10$q2082sj40GhHRo85TfApN.41eopzNqWk5fEgIDOPwNICnhMdGcmKS",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65b668533a73cbedc54fd687"
+  },
+  "username": "fsdafsdafasdasfd",
+  "email": "bo2121646ru@gmail.com",
+  "password": "$2b$10$tIHKSW5TzSkbtm/4xj3Rhu9BwEmL0LmW5F28bcFAE90QJkrXQToei",
+  "ownedGame": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65bcda73d72454168b58366f"
+  },
+  "username": "testtest",
+  "email": "test@test.com",
+  "password": "$2b$10$o.DFIIvA9ONg..EYyEKUnekkG9rzygnZAmS1wU.k9GRzNpwhfBrZe",
+  "ownedGame": [
+    "64dca3e061ba1631b1fe4da0",
+    "64dca48161ba1631b1fe4da2"
+  ],
+  "__v": 0
+}]

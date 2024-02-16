@@ -25,7 +25,7 @@ export const NavBarProvider = ({ children }) => {
     
 
     const deleteFromCart = (id) => {
-        setCart(cart.filter((item) => item.id !== id));
+        setCart(cart.filter((item) => item !== id));
     }
 
     const clearCart = () =>{

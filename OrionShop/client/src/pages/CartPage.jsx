@@ -24,7 +24,7 @@ export default function CartPage(){
         })
         
         setId(loggedAccount._id)
-    },[])
+    },[cart])
 
     useEffect(() => {
         let totalPrice = 0
@@ -66,7 +66,10 @@ export default function CartPage(){
     }
 
     const onClose = (e) =>{
-        deleteFromCart(e.target._id)
+        const gameId = e.target.className;
+        const updatedGames = fetchedGames.filter((game) => game._id !== gameId);
+        setFetchedGames(updatedGames);
+        deleteFromCart(gameId);
     }
 
     return(
@@ -82,7 +85,7 @@ export default function CartPage(){
                     <div id="CartItems">
                         {fetchedGames?.map((game) => (
                             <div className="CartItem">
-                                <img id="Close" src={close} alt="" onClick={(e)=>onClose(e)}/>
+                                <img id="Close" className={game._id} src={close} alt="" onClick={(e)=>onClose(e)}/>
                                 <img src={game.thumbnail} alt="" />
                                 <div className="CartItemDetails">
                                     

@@ -1,0 +1,303 @@
+[{
+  "_id": {
+    "$oid": "64d236c0f179a0f313a2aa33"
+  },
+  "name": "Grand Theft Auto V",
+  "desc": "Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.",
+  "developer": "Rockstar North",
+  "publisher": "Rockstar Games",
+  "releaseDate": "14-04-2014",
+  "tags": [
+    "Action",
+    "Open World",
+    "Multiplayer",
+    "Crime"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_da39c16db175f6973770bae6b91d411251763152.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_bd5db78286be0a7c6b2c62519099a9e27e6b06f3.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_b1a1cb7959d6a0e6fcb2d06ebf97a66c9055cef3.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_bc5fc79d3366c837372327717249a4887aa46d63.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_d2eb9d3e50f9e4cb8db37d2976990b3795da8187.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_bd944debbec9936769f6dfb39ee456ca605615e3.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_66daaa8e0416b805ffb9a853235e21468d6b85bc.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_3820844756ae43340809e247fea327025dca1e39.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_5eafc9316db476e74c1b38b25f15c1326f4d574a.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_fbb16a4376f0205178de722aa14b9d243c2a47ea.600x338.jpg?t=1678296348",
+    "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_bab596ea9a6924055cd8c097bba75f052c18025d.600x338.jpg?t=1678296348"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/271590/capsule_616x353.jpg?t=1678296348",
+  "trailer": "https://videos-rockstargames-com.akamaized.net/v3/V-trailer1-en_us-720p.mp4",
+  "price": 14.99
+},
+{
+  "_id": {
+    "$oid": "64dca2fd61ba1631b1fe4d9e"
+  },
+  "name": "Madden NFL 24",
+  "desc": "Experience the newest iteration of FieldSENSE™ in Madden NFL 24. More realistic character movement and smarter AI gives you control to play out your gameplay strategy with the confidence to dominate any opponent.",
+  "developer": "Tiburon",
+  "publisher": "Electronic Arts",
+  "releaseDate": "18-08-2023",
+  "tags": [
+    "Simulation",
+    "Sports",
+    "Strategy",
+    "Pvp",
+    "Co-op"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/2140330/ss_c259f29daea8117401ca4d73199315c6cb2ea53c.600x338.jpg?t=1691597901",
+    "https://cdn.akamai.steamstatic.com/steam/apps/2140330/ss_df732cb7d98c15ffe4670370c29e694d065c9949.600x338.jpg?t=1691597901",
+    "https://cdn.akamai.steamstatic.com/steam/apps/2140330/ss_2e7f5ec283c3dea6c4397b31d5e313a2ab923853.600x338.jpg?t=1691597901",
+    "https://cdn.akamai.steamstatic.com/steam/apps/2140330/ss_528a943ebe419622c748d171fb88cfebe3bbc5f5.600x338.jpg?t=1691597901",
+    "https://cdn.akamai.steamstatic.com/steam/apps/2140330/ss_72fbb1031d4e018dd5b593f03b183d1d85ff6071.600x338.jpg?t=1691597901",
+    "https://cdn.akamai.steamstatic.com/steam/apps/2140330/ss_d3c083f227aef8c87c350fbb019fcf8b2f393036.600x338.jpg?t=1691597901"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/2140330/header.jpg?t=1691597901",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256953492/movie480_vp9.webm?t=1686963493",
+  "price": "69.99",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca3e061ba1631b1fe4da0"
+  },
+  "name": "Baldur's Gate 3",
+  "desc": "Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.",
+  "developer": "Larian Studios",
+  "publisher": "Larian Studios",
+  "releaseDate": "03-08-2023",
+  "tags": [
+    "RPG",
+    "Choices Matter",
+    "Story Rich",
+    "CRPG"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_c73bc54415178c07fef85f54ee26621728c77504.600x338.jpg?t=1691766254",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_73d93bea842b93914d966622104dcb8c0f42972b.600x338.jpg?t=1691766254",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_cf936d31061b58e98e0c646aee00e6030c410cda.600x338.jpg?t=1691766254",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_b6a6ee6e046426d08ceea7a4506a1b5f44181543.600x338.jpg?t=1691766254",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1086940/ss_6b8faba0f6831a406ce015648958da9612d14dbb.600x338.jpg?t=1691766254"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/1086940/header.jpg?t=1691766254",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256961600/movie480_vp9.webm?t=1691081178",
+  "price": "29.99",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca48161ba1631b1fe4da2"
+  },
+  "name": "Counter-Strike: Global Offensive",
+  "desc": "Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).",
+  "developer": "Valve",
+  "publisher": "Valve",
+  "releaseDate": "21-08-2012",
+  "tags": [
+    "FPS",
+    "Shooter",
+    "Multiplayer",
+    "Competitive"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/730/ss_118cb022b9a43f70d2e5a2df7427f29088b6b191.600x338.jpg?t=1683566799",
+    "https://cdn.akamai.steamstatic.com/steam/apps/730/ss_d196d945c6170e9cadaf67a6dea675bd5fa7a046.600x338.jpg?t=1683566799",
+    "https://cdn.akamai.steamstatic.com/steam/apps/730/ss_8c9cce9a9dde7b9c020837dcbd4615efe6f77d66.600x338.jpg?t=1683566799",
+    "https://cdn.akamai.steamstatic.com/steam/apps/730/ss_2b9e362287b509bb3864fa7bad654fe1fda0f7ed.600x338.jpg?t=1683566799",
+    "https://cdn.akamai.steamstatic.com/steam/apps/730/ss_855c016cde14b7cec5c3d2523589b9054c030010.600x338.jpg?t=1683566799"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg?t=1683566799",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/81958/movie480.webm?t=1554409259",
+  "price": "Free",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca53761ba1631b1fe4da6"
+  },
+  "name": "PUBG: BATTLEGROUNDS",
+  "desc": "Play PUBG: BATTLEGROUNDS for free. Land on strategic locations, loot weapons and supplies, and survive to become the last team standing across various, diverse Battlegrounds. Squad up and join the Battlegrounds for the original Battle Royale experience that only PUBG: BATTLEGROUND",
+  "developer": "KRAFTON, Inc.",
+  "publisher": "KRAFTON, Inc.",
+  "releaseDate": "21-12-2017",
+  "tags": [
+    "Survival",
+    "Shooter",
+    "Battle Royale",
+    "FPS"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_1564a5c49d7fa5328c2c1fc71f369bdb39edb58f.600x338.jpg?t=1691654148",
+    "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_622c5bc5bc0de0f9a3af7b337a4b8eaba7ef045b.600x338.jpg?t=1691654148",
+    "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_63bb4a659968c3417ddd2ea5fd82cd2143e458a0.600x338.jpg?t=1691654148",
+    "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_3857268f02113c5095ff7bc73f814bd80ade8c2e.600x338.jpg?t=1691654148",
+    "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_034714c0f118657ac694c5b9c43bb647ed9ec051.600x338.jpg?t=1691654148"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg?t=1691654148",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256962888/movie480_vp9.webm?t=1691652637",
+  "price": "Free",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca5ff61ba1631b1fe4da8"
+  },
+  "name": "Apex Legends™",
+  "desc": "Apex Legends is the award-winning, free-to-play Hero Shooter from Respawn Entertainment. Master an ever-growing roster of legendary characters with powerful abilities, and experience strategic squad play and innovative gameplay in the next evolution of Hero Shooter and Battle Royale.",
+  "developer": "Respawn Entertainment",
+  "publisher": "Electronic Arts",
+  "releaseDate": "05-11-2020",
+  "tags": [
+    "Free to Play",
+    "Multiplayer",
+    "Battle Royale"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_224c59c2bf4ec465e03f536d8b9c0a465d51e626.600x338.jpg?t=1692066826",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_e7ba0c5706f1a96bd2936e51ae8a3efb05708d17.600x338.jpg?t=1692066826",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_65269560b81241fd33c375672296bb80378e5caa.600x338.jpg?t=1692066826",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_baffff3e89143c5ba609740d78db008507ef4702.600x338.jpg?t=1692066826",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1172470/ss_52d1b774ee7e451825448a12fd3227dd196d6c1f.600x338.jpg?t=1692066826"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg?t=1692066826",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256963037/movie480_vp9.webm?t=1691718310",
+  "price": "Free",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca67a61ba1631b1fe4daa"
+  },
+  "name": "Cyberpunk 2077",
+  "desc": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+  "developer": "CD PROJEKT RED",
+  "publisher": "CD PROJEKT RED",
+  "releaseDate": "10-12-2020",
+  "tags": [
+    "Cyberpunk",
+    "Open World",
+    "Nudity",
+    "RPG"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_b529b0abc43f55fc23fe8058eddb6e37c9629a6a.600x338.jpg?t=1690808313",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_8640d9db74f7cad714f6ecfb0e1aceaa3f887e58.600x338.jpg?t=1690808313",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_9284d1c5b248726760233a933dbb83757d7d5d95.600x338.jpg?t=1690808313",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_4bda6f67580d94832ed2d5814e41ebe018ba1d9e.600x338.jpg?t=1690808313",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_e5a94665dbfa5a30931cff2f45cdc0ebea9fcebb.600x338.jpg?t=1690808313"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg?t=1690808313",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256876053/movie480_vp9.webm?t=1646231493",
+  "price": "29.99",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca71f61ba1631b1fe4dac"
+  },
+  "name": "STARFIELD",
+  "desc": "Starfield is the first new universe in 25 years from Bethesda Game Studios, the award-winning creators of The Elder Scrolls V: Skyrim and Fallout 4.",
+  "developer": "Bethesda Game Studios",
+  "publisher": "Bethesda Softworks",
+  "releaseDate": "06-09-2023",
+  "tags": [
+    "Open World",
+    "Space",
+    "RPG",
+    "Singleplayer"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1716740/ss_4887dc140a637684ddcfca518458668409f946dc.600x338.jpg?t=1690917875",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1716740/ss_b2821283cb140cd5a6289a8160016b6a60d8f96e.600x338.jpg?t=1690917875",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1716740/ss_68f15d580bf91971f637be5e464bc803482d78f7.600x338.jpg?t=1690917875",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1716740/ss_aae99c177004bb5ec653d2fcb65a5d30489ec7b8.600x338.jpg?t=1690917875",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1716740/ss_c8594798fadfd8e042b2fc8afff7bcf4872c5198.600x338.jpg?t=1690917875"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/1716740/header.jpg?t=1690917875",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256952210/movie480_vp9.webm?t=1687290120",
+  "price": "42.99",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca7f061ba1631b1fe4dae"
+  },
+  "name": "NARAKA: BLADEPOINT",
+  "desc": "Dive into the legends of the Far East in NARAKA: BLADEPOINT; team up with friends in fast-paced melee fights for a Battle Royale experience unlike any other. Find your playstyle with a varied cast of heroes with unique skills. More than 20 million players have already joined the fray, play free now!",
+  "developer": "24 Entertainment",
+  "publisher": "NetEase Games Global",
+  "releaseDate": "12-08-2021",
+  "tags": [
+    "Battle Royale",
+    "Multiplayer",
+    "Martial Arts"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1203220/ss_d01ed261c8b3bb101e13e0baab6699784cc5de6c.600x338.jpg?t=1691744924",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1203220/ss_b31268753c63641ad350815457b510da0ead6b73.600x338.jpg?t=1691744924",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1203220/ss_3b07434163bfa2e6a9e28dbb8452dc46ac73019b.600x338.jpg?t=1691744924",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1203220/ss_4323ad80f38cdef11daacb1297aa3828f3f95e39.600x338.jpg?t=1691744924",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1203220/ss_9b9f67e224d2967885d0c796dff90f57b924381d.600x338.jpg?t=1691744924"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/1203220/header.jpg?t=1691744924",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256957929/movie480_vp9.webm?t=1689283195",
+  "price": "Free",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dca8d361ba1631b1fe4db2"
+  },
+  "name": "ARMORED CORE™ VI FIRES OF RUBICON™",
+  "desc": "A new action game based on the concept of the ARMORED CORE series that uses the knowledge gained from FromSoftware's recent action game development.",
+  "developer": "FromSoftware Inc.",
+  "publisher": "FromSoftware Inc.",
+  "releaseDate": "25-08-2023",
+  "tags": [
+    "Mechs",
+    "3D",
+    "Character Customization"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1888160/ss_549f55589c10866bc31243d277324e31ad155b29.600x338.jpg?t=1692142636",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1888160/ss_dcd98899647b45246cfb296aa5a3b40b2ae87e9e.600x338.jpg?t=1692142636",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1888160/ss_c92110c39a9c64376af5e8da31a0e6ffa9747334.600x338.jpg?t=1692142636",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1888160/ss_6648f7e39998ae173b2271c6a325d4295e6db785.600x338.jpg?t=1692142636",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1888160/ss_f441df5b6d02d0cbc2635f29ec502d93058e025c.600x338.jpg?t=1692142636"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/1888160/header.jpg?t=1692142636",
+  "trailer": "",
+  "price": "39.99",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64dcaa5861ba1631b1fe4db4"
+  },
+  "name": "Call of Duty®: Modern Warfare® II",
+  "desc": "Call of Duty®: Modern Warfare® II drops players into an unprecedented global conflict that features the return of the iconic Operators of Task Force 141.",
+  "developer": "Infinity Ward",
+  "publisher": "Activision",
+  "releaseDate": "28-10-2022",
+  "tags": [
+    "Action",
+    "FPS",
+    "Singleplayer",
+    "Shooter",
+    "War"
+  ],
+  "gallery": [
+    "https://cdn.akamai.steamstatic.com/steam/apps/1962660/ss_2eda128c93a1dd4e0bd593a5579213e6e700737d.600x338.jpg?t=1691016513",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1962660/ss_b16c26e34d511934189c3ef0e6cb94a121c5c67d.600x338.jpg?t=1691016513",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1962660/ss_8285e3244e953cc96efe09264ab2cafc30cbc440.600x338.jpg?t=1691016513",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1962660/ss_bbaf823dfff55cdf4086e8ad60d1ae458ded07e7.600x338.jpg?t=1691016513",
+    "https://cdn.akamai.steamstatic.com/steam/apps/1962660/ss_5ee40dffeb2f148cab17bc06c6c6d7d5b739650d.600x338.jpg?t=1691016513"
+  ],
+  "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/1962660/header.jpg?t=1691016513",
+  "trailer": "https://cdn.akamai.steamstatic.com/steam/apps/256961305/movie480_vp9.webm?t=1690995953",
+  "price": "69.99",
+  "__v": 0
+}]
